@@ -2,13 +2,15 @@
 
 A comprehensive security approval framework and architecture for deploying Claude Code in enterprise environments.
 
+This documents the security architecture and formal approval for deploying Claude Code in enterprise environments. It covers the full control surface: sandboxing, DLP, prompt injection defenses, audit trails, network controls, and residual risk assessment. Reusable as a template for any AI coding tool deployment.
+
 ## Overview
 
 This repository contains the security assessment, architecture recommendations, and configuration specifications for securely deploying Claude Code (Anthropic's AI coding assistant) in enterprise development teams.
 
 **Status:** APPROVED
 **Version:** 2.0
-**Last Review:** January 2026
+**Last Review:** May 2026
 
 ## Key Documents
 
@@ -80,7 +82,7 @@ claude-sec/
 │   ├── review.md
 │   ├── findings.md
 │   └── archive/
-└── Archive/                      # Previous versions
+└── Archive/                       # Previous versions
 ```
 
 ## Quick Start
@@ -92,7 +94,7 @@ claude-sec/
 ## Key Configuration Files
 
 | File | Location | Purpose |
-|------|----------|---------|
+|-------|----------|---------|
 | managed-settings.json | /etc/claude-code/ | Permission enforcement |
 | managed-mcp.json | /etc/claude-code/ | MCP server control |
 | history-security.sh | /etc/profile.d/ | Shell hardening |
@@ -100,7 +102,7 @@ claude-sec/
 
 ## Conditions Before Production
 
-- Deploy AWS infrastructure (VPC, endpoints, firewalls)
+- Deploy AWSinfrastructure (VPC, endpoints, firewalls)
 - Configure managed-settings.json and managed-mcp.json
 - Deploy Lakera Guard for prompt injection defense
 - Enable S3 Object Lock (COMPLIANCE mode) for audit logs
